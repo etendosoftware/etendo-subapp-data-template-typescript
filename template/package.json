@@ -36,7 +36,7 @@
     "axios": "0.20.0",
     "base-64": "1.0.0",
     "date-fns": "2.10.0",
-    "etendo-ui-library": "1.7.7",
+    "etendo-ui-library": "1.8.1",
     "etrest": "1.2.0",
     "i18n-js": "3.5.1",
     "mobx": "6",
