@@ -18,3 +18,9 @@ export interface IData {
   organization: string;
   client: string;
 }
+
+export interface IFile {
+  filePath: string;
+  fileName: string;
+  fileMimeType: string;
+}

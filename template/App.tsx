@@ -1,9 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import locale from './src/localization/locale';
-import ProductDetail from './src/screens/productDetail';
-import { IData, INavigationContainerProps } from './src/interfaces';
-import ProductService from './src/lib/data_gen/productservice';
+import { IData, IFile, INavigationContainerProps } from './src/interfaces';
+import ProductService from './lib/data_gen/productservice';
 import Home from './src/screens/home';
 
 interface AppProps {
@@ -12,6 +11,7 @@ interface AppProps {
   navigationContainer: INavigationContainerProps;
   token: string;
   url: string;
+  sharedFiles: IFile[];
 }
 
 const App = ({
@@ -20,6 +20,7 @@ const App = ({
   dataUser,
   token,
   url,
+  sharedFiles,
 }: AppProps) => {
   const Stack = createStackNavigator();
 
@@ -34,7 +35,7 @@ const App = ({
         options={{ headerShown: false }}
         name="Home"
         initialParams={{ dataUser }}>
-        {props => <Home {...props} navigationContainer={navigationContainer} />}
+        {props => <Home {...props} navigationContainer={navigationContainer} sharedFiles={sharedFiles} />}
       </Stack.Screen>
     </Stack.Navigator>
   );
